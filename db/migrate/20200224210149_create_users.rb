@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :profile_img
       t.string :cover_img
       t.string :bio
+      t.boolean :admin
 
       t.timestamps
     end
