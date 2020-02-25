@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :insta_products
   resources :you_videos
   resources :posts
   resources :orders
