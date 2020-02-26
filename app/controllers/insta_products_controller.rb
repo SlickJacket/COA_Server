@@ -1,28 +1,20 @@
 class InstaProductsController < ApplicationController
   before_action :set_insta_product, only: [:show, :edit, :update, :destroy]
 
-  # GET /insta_products
-  # GET /insta_products.json
   def index
     @insta_products = InstaProduct.all
   end
 
-  # GET /insta_products/1
-  # GET /insta_products/1.json
   def show
   end
 
-  # GET /insta_products/new
   def new
     @insta_product = InstaProduct.new
   end
 
-  # GET /insta_products/1/edit
   def edit
   end
 
-  # POST /insta_products
-  # POST /insta_products.json
   def create
     @insta_product = InstaProduct.new(insta_product_params)
 
@@ -37,8 +29,6 @@ class InstaProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /insta_products/1
-  # PATCH/PUT /insta_products/1.json
   def update
     respond_to do |format|
       if @insta_product.update(insta_product_params)
@@ -51,8 +41,6 @@ class InstaProductsController < ApplicationController
     end
   end
 
-  # DELETE /insta_products/1
-  # DELETE /insta_products/1.json
   def destroy
     @insta_product.destroy
     respond_to do |format|
@@ -62,12 +50,10 @@ class InstaProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_insta_product
       @insta_product = InstaProduct.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def insta_product_params
       params.require(:insta_product).permit(:img, :title, :description, :material, :color, :length, :width, :stones, :cut, :stone_color, :carat_weight, :gram_weight, :user_id)
     end
